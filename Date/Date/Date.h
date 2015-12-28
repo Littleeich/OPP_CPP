@@ -12,6 +12,7 @@ public:
 	Date(short day, short month) :Date(day, month, min_year){};
 	Date(short day) :Date(day, 01, min_year){};
 	Date() :Date(01, 01, min_year){};
+	Date(const Date & other) :Date(other.day, other.month, other.year){};
 
 	void SetDay(short day);
 	void SetMonth(short month);
@@ -26,7 +27,7 @@ public:
 	void AddMonth(short Amonth);
 	void AddYear(short Ayear);
 
-	short DiffOfTheDays(Date date);
+	int DiffOfTheDays(Date date);
 
 	Date operator+(int k)
 	{
@@ -42,7 +43,7 @@ public:
 		return result;
 	}
 
-	short operator-(const Date & date)
+	int operator-(const Date & date)
 	{
 		Date some = *this;
 		if (*this < date)
@@ -53,7 +54,7 @@ public:
 			return (-1) * date.DiffOfTheDays(some);*/
 	}
 
-	short operator-=(const Date & date)
+	int operator-=(const Date & date)
 	{
 		Date some = *this;
 		if (*this < date)
@@ -112,7 +113,7 @@ public:
 		return some;
 	}
 
-	char * DayOfWeek() const;
+	char * DayOfWeek();
 
 	~Date();
 };

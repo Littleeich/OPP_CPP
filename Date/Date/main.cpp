@@ -71,7 +71,8 @@ void main()
 	PrintDate(--b);
 	cout << endl;
 	
-	/*Date today(25, 12, 2015);
-	cout << today.DayOfWeek() << endl;*/
+	Date today(25, 12, 2015);
+	cout << today.DayOfWeek() << endl;
+
 
 }

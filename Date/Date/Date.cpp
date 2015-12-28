@@ -96,9 +96,9 @@ void Date::AddYear(short Ayear)
 		year = 9999;
 }
 
-short Date::DiffOfTheDays(Date date)
+int Date::DiffOfTheDays(Date date)
 {
-	short amount;
+	int amount;
 	if (this->day <= date.day)
 		amount = date.day - this->day;
 	else
@@ -196,30 +196,32 @@ Date Date::DeductDay()
 		return Date(31, 12, year - 1);
 }
 
-//char * Date::DayOfWeek() const
-//{
-//	char * Day_of_week[4];
-//	Date etalon(1, 1, 1900);
-//	Date now (day, month, year);
-//	short result = (now - etalon) % 7;
-//
-//	if (result == 0)
-//		Day_of_week[4] = "MON";
-//	else if (result == 1)
-//		Day_of_week[4] = "TUE";
-//	else if (result == 2)
-//		Day_of_week[4] ="WED";
-//	else if (result == 3)
-//		Day_of_week[4] = "THU";
-//	else if (result == 4)
-//		Day_of_week[4] = "FRI";
-//	else if (result == 5)
-//		Day_of_week[4] = "SAT";
-//	else if (result == 6)
-//		Day_of_week[4] = "SUN";
-//
-//	return * Day_of_week;
-//}
+char * Date::DayOfWeek()
+{
+	char * Day_of_week[4];
+	Date etalon(1, 1, 1990);
+	Date now (day, month, year);
+	short result = (etalon - now) % 7;
+
+	if (result == 0)
+		* Day_of_week = "MON";
+	else if (result == 1)
+		* Day_of_week = "TUE";
+	else if (result == 2)
+		* Day_of_week ="WED";
+	else if (result == 3)
+		* Day_of_week = "THU";
+	else if (result == 4)
+		* Day_of_week = "FRI";
+	else if (result == 5)
+		* Day_of_week = "SAT";
+	else if (result == 6)
+		* Day_of_week = "SUN";
+	else
+		* Day_of_week = "NAN";
+
+	return * Day_of_week;
+}
 
 Date::~Date()
 {
