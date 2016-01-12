@@ -1,6 +1,5 @@
 #include "Date.h"
 
-
 void Date::SetYear(short year)
 {
 	if (year < min_year)
@@ -198,29 +197,29 @@ Date Date::DeductDay()
 
 char * Date::DayOfWeek()
 {
-	char * Day_of_week[4];
+	char * Day_of_week;
 	Date etalon(1, 1, 1990);
 	Date now (day, month, year);
 	short result = (etalon - now) % 7;
 
 	if (result == 0)
-		* Day_of_week = "MON";
+		Day_of_week = "MON";
 	else if (result == 1)
-		* Day_of_week = "TUE";
+		Day_of_week = "TUE";
 	else if (result == 2)
-		* Day_of_week ="WED";
+		Day_of_week ="WED";
 	else if (result == 3)
-		* Day_of_week = "THU";
+		Day_of_week = "THU";
 	else if (result == 4)
-		* Day_of_week = "FRI";
+		Day_of_week = "FRI";
 	else if (result == 5)
-		* Day_of_week = "SAT";
+		Day_of_week = "SAT";
 	else if (result == 6)
-		* Day_of_week = "SUN";
+		Day_of_week = "SUN";
 	else
-		* Day_of_week = "NAN";
+		Day_of_week = "NAN";
 
-	return * Day_of_week;
+	return Day_of_week;
 }
 
 Date::~Date()
