@@ -8,17 +8,16 @@ class String
 	unsigned int length;
 	char * str;
 
-	void SetLength(unsigned int length);
 	void ChangeLength(unsigned int newLength, bool type = true);
-	//вроде бы статические методы написал, но я запутался даже в том, как их вызывать(((
-	//хотя по правде говоря, я даже не понимаю нафиг именно их статическими делать(((
-	static int Compare(String first, String second);
-	static int Compare(String other, char* some);
 
 public:
 
+	static int Compare(String first, String second);
+	static int Compare(String other, char* some);
+	void SetLength(unsigned int length);
 	void SetCapacity(unsigned int capacity);
 	void SetStr(char * str);
+	void AddStr(char * added);
 
 	unsigned int GetCapacity() { return capacity; }
 	unsigned int GetLength() { return length; }

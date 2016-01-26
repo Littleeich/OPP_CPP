@@ -116,7 +116,7 @@ void String::SetStr(char * str)
 
 	if (this->str)
 	{ 
-		delete[] this->str;
+		//delete[] this->str;
 		this->str = nullptr;
 	}
 	this->str = new char[capacity];
@@ -292,17 +292,17 @@ char String::operator[](unsigned int index)
 String String::operator+(const String& other)
 {
 	unsigned int wide = this->length;
-	String result("s");
-	result.SetLength(wide + other.length);
-	result.SetCapacity(capacity);
+	String * result = new String("s");
+	result->SetLength(wide + other.length);
+	result->SetCapacity(capacity);
 	if (this->str)
 	for (unsigned int i = 0; i < wide; i++)
-		result.str[i] = this->str[i];
+		result->str[i] = this->str[i];
 	if (other.str)
 	for (unsigned int i = wide; i < (wide + other.length); i++)
-		result.str[i] = other.str[i - wide];
-	result.str[wide + other.length] = '\0';
-	return result;
+		result->str[i] = other.str[i - wide];
+	result->str[wide + other.length] = '\0';
+	return *result;
 }
 
 //некорректно
@@ -320,6 +320,11 @@ String String::operator+(char * some)
 			result.str[i] = some[i - wide];
 	result.str[wide + StrLen(some)] = '\0';
 	return result;
+}
+
+void String::AddStr(char * added)
+{
+	*this = *this + added;
 }
 
 void String::operator+=(const String& other)

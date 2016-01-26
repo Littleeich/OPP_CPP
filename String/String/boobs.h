@@ -1,12 +1,6 @@
 #pragma once
 #include "String.h"
 
-//String operator+(char * some, String& other)
-//{
-//	String result = other + String(some);
-//	return result;
-//}
-
 template <typename T>
 T row(T some, unsigned int step)
 {
