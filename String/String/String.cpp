@@ -1,6 +1,7 @@
 #include "String.h"
 #include "boobs.h"
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 double String::modificator = 2;
@@ -114,7 +115,7 @@ void String::SetStr(char * str)
 	int Length = StrLen(str) + 1;
 	if (Length < 2) return;
 
-	if (this->str)
+	if (this->str != nullptr)
 	{ 
 		//delete[] this->str;
 		this->str = nullptr;
@@ -188,6 +189,8 @@ bool String::operator>(const String& other)
 		//если символ первой строки меньше символа второй, то она не может быть больше - возврат Ћќ∆№
 		if (str[i] > other.str[i])
 			return false;
+		else if (str[i] < other.str[i])
+			return true;
 		i++;
 	}
 	//если перва€ строка всЄ продолжаетс€, а втора€ уже закончилась, то возврат - Ћќ∆№
@@ -221,52 +224,20 @@ bool String::operator>=(const String& other)
 	return true;
 }
 
-bool String::operator<=(const String& other)
+bool String::operator<=(String& other)
 {
-	//если второй строки нету вообще, то она не может быть меньше первой
-	if (other.str == nullptr)
-		return false;
-	else if (str == nullptr)
+	if (other >= *this)
 		return true;
-	//посимвольно провер€ем соотношение строк, пока не найдЄм различие в символах
-	int i = 0;
-	//проверка до тех пока пока хот€бы одна из строк не закончитс€
-	while (str[i] && other.str[i])
-	{
-		//если символ второй строки меньше символа первой, то она не может быть больше - возврат Ћќ∆№
-		if (str[i] < other.str[i])
-			return false;
-		i++;
-	}
-	//если втора€ строка всЄ продолжаетс€, а перва€ уже закончилась, то возврат - Ћќ∆№
-	if (!str[i] && other.str[i])
+	else
 		return false;
-	//иначе перва€ строка и првда больше второй
-	return true;
 }
 
-bool String::operator<(const String& other)
+bool String::operator<(String& other)
 {
-	//если второй строки нету вообще, то она не может быть меньше первой
-	if (other.str == nullptr)
-		return false;
-	else if (str == nullptr)
+	if (other.operator>(*this))
 		return true;
-	//посимвольно провер€ем соотношение строк, пока не найдЄм различие в символах
-	int i = 0;
-	//проверка до тех пока пока хот€бы одна из строк не закончитс€
-	while (str[i] && other.str[i])
-	{
-		//если символ второй строки меньше символа первой, то она не может быть больше - возврат Ћќ∆№
-		if (str[i] < other.str[i])
-			return false;
-		i++;
-	}
-	//если втора€ строка всЄ продолжаетс€, а перва€ уже закончилась, то возврат - Ћќ∆№
-	if ((!str[i] && other.str[i]) || (!str[i] && !other.str[i]))
+	else
 		return false;
-	//иначе перва€ строка и првда больше второй
-	return true;
 }
 
 void String::operator()(char * str)
@@ -288,7 +259,6 @@ char String::operator[](unsigned int index)
 	return str[index];
 }
 
-//перепроверить!
 String String::operator+(const String& other)
 {
 	unsigned int wide = this->length;
@@ -305,20 +275,9 @@ String String::operator+(const String& other)
 	return *result;
 }
 
-//некорректно
 String String::operator+(char * some)
 {
-	unsigned int wide = this->length;
-	String result("s");
-	result.SetLength(wide + StrLen(some));
-	result.SetCapacity(capacity);
-	if (this->str)
-		for (unsigned int i = 0; i < wide; i++)
-			result.str[i] = this->str[i];
-	if (some)
-		for (unsigned int i = wide; i < (wide + StrLen(some)); i++)
-			result.str[i] = some[i - wide];
-	result.str[wide + StrLen(some)] = '\0';
+	String result = *this + String(some);
 	return result;
 }
 
@@ -329,40 +288,12 @@ void String::AddStr(char * added)
 
 void String::operator+=(const String& other)
 {
-	if (other.str == nullptr)
-		return;
-	unsigned int width = length;
-	SetLength(length + other.length);
-	SetCapacity(capacity);
-	char * temp = new char[capacity];
-	if (width > 0)
-		for (unsigned int i = 0; i < width; i++)
-			temp[i] = str[i];
-	if (other.length > 0)
-		for (unsigned int i = width; i < length; i++)
-			temp[i] = other.str[i - width];
-	temp[length] = '\0';
-	delete[] str;
-	str = temp;
+	*this = *this + other;
 }
 
 void String::operator+=(char * other)
 {
-	if (other == nullptr)
-		return;
-	unsigned int width = length;
-	SetLength(length + StrLen(other));
-	SetCapacity(capacity);
-	char * temp = new char[capacity];
-	if (width > 0)
-		for (unsigned int i = 0; i < width; i++)
-			temp[i] = str[i];
-	if (StrLen(other) > 0)
-		for (unsigned int i = width; i < length; i++)
-			temp[i] = other[i - width];
-	temp[length] = '\0';
-	delete[] str;
-	str = temp;
+	*this = *this + other;
 }
 
 String::operator char *() const
@@ -372,47 +303,13 @@ String::operator char *() const
 
 String::operator int()const
 {
-	int result = 0, count2 = 0;
-	for (unsigned int i = 0; i < length; i++)
-	{
-		if (str[i] >= 48 && str[i] <= 57)
-			count2++;
-		else
-			break;
-	}
-
-	for (unsigned int i = 0; i < (unsigned int)count2; i++)
-			result += int((str[i] - 48) * row(10, count2 - 1 - i));
+	int result = atoi(this->str);
 	return result;
 }
 
 String::operator double() const
 {
-	double result = 0;
-	unsigned int count1 = 0, count2 = 0, i = 0;
-	for (i; i < length; i++)
-	{
-		if (str[i] >= 48 && str[i] <= 57)
-			count2++;
-		else
-			break;
-	}
-
-	if (str[i] == 46 || str[i] == 44)
-		for (i = count2 + 1; i < length; i++)
-		{
-			if (str[i] >= 48 && str[i] <= 57)
-				count1++;
-			else
-				break;
-		}
-
-	for (unsigned int i = 0; i < count2; i++)
-		result += double((str[i] - 48) * row(10, count2 - 1 - i));
-	for (unsigned int i = count2 + 1; i < count1 + count2 + 1; i++)
-	{
-		result += (double(str[i] - 48) / row(10, (i - count2)));
-	}
+	double result = atof(this->str);
 	return result;
 }
 
@@ -456,161 +353,52 @@ const char* String::GetCharArray() const
 
 int String::CompareTo(String& other)
 {
-	int i = 0;
-	if (this->str == nullptr && other.str == nullptr)
-		return 0;
-	else if (this->str == nullptr)
-		return -1;
-	else if (other.str == nullptr)
+	if (*this > other)
 		return 1;
-	while (this->str[i] && other.str[i])
-	{
-		if (str[i] > other.str[i])
-			return 1;
-		if (str[i] < other.str[i])
-			return -1;
-		i++;
-	}
-	if (!str[i] && !other.str[i])
-		return 0;
-	if (!str[i])
+	else if (other > *this)
 		return -1;
-	else 
-		return 1;
+	else
+		return 0;
 }
 
 int String::CompareTo(char * some)
 {
-	int i = 0;
-	if (this->str == nullptr && some == nullptr)
-		return 0;
-	else if (this->str == nullptr)
-		return -1;
-	else if (some == nullptr)
-		return 1;
-	while (this->str[i] && some[i])
-	{
-		if (str[i] > some[i])
-			return 1;
-		if (str[i] < some[i])
-			return -1;
-		i++;
-	}
-	if (!str[i] && !some[i])
-		return 0;
-	if (!str[i])
-		return -1;
-	else
-		return 1;
+	String temp(some);
+	return CompareTo(temp);
 }
 
 void String::Concat(String &other)
 {
-	unsigned int width = length;
-	SetLength(length + other.length);
-	SetCapacity(capacity);
-	char * temp = new char[capacity];
-	if (width > 0)
-	for (unsigned int i = 0; i < width; i++)
-		temp[i] = str[i];
-	if (other.length > 0)
-	for (unsigned int i = width; i < length; i++)
-		temp[i] = other.str[i - width];
-	temp[length] = '\0';
-	delete[] str;
-	str = temp;
+	*this += other;
 }
 
 void String::Concat(char * other)
 {
-	unsigned int width = length;
-	SetLength(length + StrLen(other));
-	SetCapacity(capacity);
-	char * temp = new char[capacity];
-	if (width > 0)
-		for (unsigned int i = 0; i < width; i++)
-			temp[i] = str[i];
-	if (StrLen(other) > 0)
-		for (unsigned int i = width; i < length; i++)
-			temp[i] = other[i - width];
-	temp[length] = '\0';
-	delete[] str;
-	str = temp;
+	*this += other;
 }
 
 void String::Concat(int number)
 {
 	if (number == 0)
 	{
-		ChangeLength(1);
-		str[length - 1] = 0 + 48;
-		str[length] = '\0';
+		*this += "0";
+		return;
 	}
-	else if (number > 0)
-	{
-		int counter = myCountOfNumbers(number);
-		ChangeLength(counter);
-		for (unsigned int i = length - 1; i > length - counter - 1; i--)
-		{
-			str[i] = number % 10 + 48;
-			number /= 10;
-		}
-		str[length] = '\0';
-	}
-	else if (number < 0)
-	{
-		number = -number; 
-		int counter = myCountOfNumbers(number);
-		ChangeLength(counter + 1);
-		str[length - counter - 1] = char(45);
-		for (unsigned int i = length - 1; i > length - counter - 1; i--)
-		{
-			str[i] = number % 10 + 48;
-			number /= 10;
-		}
-		str[length] = '\0';
-	}
+	unsigned int size = myCountOfNumbers(number);
+	char * some = new char[size + 1];
+	_itoa_s(number, some, size + 1, 10);
+	*this += some;
+	delete[] some;
 }
 
-//не более 2х цифр после точки
-void String::Concat(double number)
+void String::Concat(double number, int accuracy)
 {
-	if (number == 0.0)
-	{
-		ChangeLength(1);
-		str[length - 1] = 0 + 48;
-		str[length] = '\0';
-	}
-	else if (number > 0)
-	{
-		unsigned int counter = myCountOfNumbers(number);
-		unsigned int counter2 = CountDoublePart(number);
-		if (counter2 == 0)
-		{
-			Concat((int)number);
-		}
-		else
-		{
-			ChangeLength(counter + counter2 + 1);
-
-			for (unsigned int i = length - counter2 - 1 - 1; i > length - counter2 - counter - 1 - 1; i--)
-			{
-				str[i] = (int)number % 10 + 48;
-				number /= 10;
-			}
-
-			str[length - counter2 - 1] = char(46);
-			number *= row(10, counter);
-			number -= (int)number;
-			for (unsigned int i = length - counter2; i < length; i++)
-			{
-				number *= 10;
-				str[i] = (int)number + 48;
-				number -= (int)number;
-			}
-			str[length] = '\0';
-		}
-	}
+	Concat((int)number);
+	*this += ".";
+	number -= (int)number;
+	for (int i = 0; i < accuracy; i++)
+		number *= 10;
+	Concat((int)number);
 }
 
 void String::Concat(String * other, int count)
@@ -695,10 +483,7 @@ bool String::StartsWith(const String& other)
 
 bool String::Equals(const String& other)
 {
-	if (CompareTo(other) == 0)
-		return true;
-	else
-		return false;
+	return *this == other;
 }
 
 void String::CopyTo(String& other)
@@ -917,6 +702,8 @@ void String::Replace(char R, char Z)
 
 void String::Replace(const String& other, const String& newStr)
 {
+	if (other.str == nullptr)
+		return;
 	if (length < other.length)
 		return;
 	for (unsigned int i = 0; i < length - other.length + 1; i++)
@@ -943,7 +730,10 @@ void String::Replace(const String& other, const String& newStr)
 				for (l = i; l < i + newStr.length; l++)
 					temp[l] = newStr.str[l - i];
 				for (l = i + newStr.length; l < length; l++)
-					temp[l] = str[l - other.length];
+					if (newStr.length > 0)
+						temp[l] = str[l + other.length - newStr.length];
+					else
+						temp[l] = str[l + other.length];
 				temp[length] = '\0';
 
 				delete[] str;
@@ -956,12 +746,13 @@ void String::Replace(const String& other, const String& newStr)
 //заменил возвратный тип на войд
 void String::ToLower()
 {
+	
 	if (this->str == nullptr)
 		return;
 
 	for (unsigned int i = 0; i < length; i++)
-		if ((str[i] >= 65 && str[i] <= 90) || (str[i] >= -65 && str[i] <= -33))
-			str[i] += 32;
+		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'ј' && str[i] <= 'я'))
+			str[i] += 'a' - 'A';
 }
 
 //заменил возвратный тип на войд
@@ -977,12 +768,7 @@ void String::ToUpper()
 
 void String::Revers()
 {
-	char * temp = new char[capacity];
-	for (unsigned int i = 0; i < length; i++)
-		temp[i] = str[length - i - 1];
-	temp[length] = '\0';
-	delete[] str;
-	str = temp;
+	_strrev(str);
 }
 
 void String::SortAZ()
@@ -995,10 +781,8 @@ void String::SortAZ()
 
 void String::SortZA()
 {
-	for (unsigned int j = length - 1; j > 0; j--)
-		for (unsigned int i = 0; i < j; i++)
-			if (str[i]<str[i + 1])
-				swap(str[i], str[i + 1]);
+	SortAZ();
+	Revers();
 }
 
 void String::Shuffle()

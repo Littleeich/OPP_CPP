@@ -9,12 +9,11 @@ class String
 	char * str;
 
 	void ChangeLength(unsigned int newLength, bool type = true);
-
+	void SetLength(unsigned int length);
 public:
 
 	static int Compare(String first, String second);
 	static int Compare(String other, char* some);
-	void SetLength(unsigned int length);
 	void SetCapacity(unsigned int capacity);
 	void SetStr(char * str);
 	void AddStr(char * added);
@@ -41,8 +40,8 @@ public:
 	bool operator!=(const String& other);
 	bool operator>(const String&other);
 	bool operator>=(const String& other);
-	bool operator<(const String& other);
-	bool operator<=(const String& other);
+	bool operator<(String& other);
+	bool operator<=(String& other);
 	void operator()(char * str);
 	void operator()(const String& other);
 	char operator[](unsigned int index);
@@ -68,7 +67,7 @@ public:
 	void Concat(String &other);
 	void Concat(char * other);
 	void Concat(int number);
-	void Concat(double number);
+	void Concat(double number, int accuracy = 3);
 	void Concat(String * other, int count);
 
 	bool Contains(const String& other);
