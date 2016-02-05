@@ -73,7 +73,7 @@ void main()
 	//b.Concat(t, 4);
 	//cout << b << endl;
 
-	//b("        Sose        chars...Sose chars...          ");
+	b("        Sose        chars...Sose chars...          ");
 	//c("chars...");
 	//if (b.Equals(c))
 	//	cout << "It works!\n";
@@ -85,8 +85,10 @@ void main()
 	//char * text = nullptr;
 	//d += text;
 	//cout << d << endl;
-	//cout << b.IndexOf('s') << endl;
-	//cout << b.LastIndexOf('s') << endl;
+	cout << b << endl;
+	cout <<"Index of: " << b.IndexOf('s') << endl;
+	cout << "Last index of: " << b.LastIndexOf('s') << endl;
+	cout << b << endl;
 	//cout << b.IndexOf(c) << endl;
 	//cout << b.LastIndexOf(c) << endl;
 	//cout << b.IndexOfAny(d) << endl;
@@ -110,7 +112,7 @@ void main()
 	//cout << b << endl;
 
 	b("...some final methods, some final steps...");
-	c(" ");
+	c(".");
 	String d("_");
 	b.Replace(c, d);
 	cout << b << endl;
@@ -148,4 +150,18 @@ void main()
 	cout << g.CompareTo(g) << endl;
 	String t("515,88");
 	cout << (double)t + 5 << endl;
+	t.Remove(3);
+	cout << t << endl;
+	cout << boolalpha << t.Contains(g) << endl;
+	cout << boolalpha << t.Contains(t) << endl;
+	String g2("Kill");
+	cout << g2 << endl << g << endl;
+	cout << boolalpha << g.StartsWith(g2) << endl;
+	cout << boolalpha << g2.StartsWith(g) << endl;
+	String g3(some);
+	cout << boolalpha << g.EndsWith(g3) << endl;
+	cout << boolalpha << g.EndsWith(g3) << endl;
+	String g4("Some kill Some");
+	String g5("Some");
+	cout << boolalpha << g4.EndsWith(g5) << endl;
 }

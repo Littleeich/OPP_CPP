@@ -33,27 +33,7 @@ int String::Compare(String first, String other)
 
 int String::Compare(String first, char * some)
 {
-	int i = 0;
-	if (first.str == nullptr && some == nullptr)
-		return 0;
-	else if (first.str == nullptr)
-		return -1;
-	else if (some == nullptr)
-		return 1;
-	while (first.str[i] && some[i])
-	{
-		if (first.str[i] > some[i])
-			return 1;
-		if (first.str[i] < some[i])
-			return -1;
-		i++;
-	}
-	if (!first.str[i] && !some[i])
-		return 0;
-	if (!first.str[i])
-		return -1;
-	else
-		return 1;
+	return Compare(first, String(some));
 }
 
 void String::SetCapacity(unsigned int capacity)
@@ -99,15 +79,10 @@ void String::ChangeLength(unsigned int newLength, bool type)
 
 unsigned int String::StrLen(char * Str)
 {
-	unsigned int NewLength = 0;
-	if (Str == nullptr) return 0;
+	if (Str)
+		return (unsigned int)strlen(Str);
 	else
-		while (*Str)
-			{
-				NewLength++;
-				Str++;
-			}
-	return NewLength;
+		return 0;
 }
 
 void String::SetStr(char * str)
@@ -126,9 +101,10 @@ void String::SetStr(char * str)
 
 void String::myStrCpu(char *& str1, unsigned int Length, char * str2)
 {
-	for (unsigned int i = 0; i < Length; i++)
+	strcpy_s(str1, length + 1, str2);
+	/*for (unsigned int i = 0; i < Length; i++)
 		str1[i] = str2[i];
-	str1[Length] = '\0';
+	str1[Length] = '\0';*/
 }
 
 String::String(char * str, unsigned int capacity)
@@ -161,16 +137,10 @@ bool String::operator==(const String& other)
 
 bool String::operator!=(const String& other)
 {
-	if (length != other.length)
+	if (*this == other)
+		return false;
+	else
 		return true;
-	int i = 0;
-	while (str[i])
-	{
-		if (str[i] != other.str[i])
-			return true;
-		i++;
-	}
-	return false;
 }
 
 bool String::operator>(const String& other)
@@ -425,60 +395,21 @@ void String::Concat(String * other, int count)
 
 bool String::Contains(const String& other)
 {
-	if (length < other.length)
-		return false;
-	for (unsigned int i = 0; i < length - other.length + 1; i++)
-		if (str[i] == other.str[0])
-		{
-			int num = 1;
-			for (unsigned int j = 1; j < other.length; j++)
-				if (str[i + j] == other.str[j])
-					num++;
-				else
-					break;
-			if (num == other.length)
-				return true;
-		}
-	return false;
+	return (strstr(this->str, other.str) != nullptr);
 }
 
 bool String::EndsWith(const String& other)
 {
-	if (length < other.length)
-		return false;
-	unsigned int i = length - other.length;
-		if (str[i] == other.str[0])
-		{
-			int num = 1;
-			for (unsigned int j = 1; j < other.length; j++)
-				if (str[i + j] == other.str[j])
-					num++;
-				else
-					break;
-			if (num == other.length)
-				return true;
-		}
-	return false;
+	if (strstr(this->str + this->length - other.length, other.str) == this->str + this->length - other.length)
+		return true;
+	else return false;
 }
 
 bool String::StartsWith(const String& other)
 {
-	if (length < other.length)
-		return false;
-	unsigned int i = 0;
-	if (str[i] == other.str[0])
-	{
-		int num = 1;
-		for (unsigned int j = 1; j < other.length; j++)
-			if (str[i + j] == other.str[j])
-				num++;
-			else
-				break;
-		if (num == other.length)
-			return true;
-	}
-	return false;
-
+	if (strstr(this->str, other.str) == this->str)
+		return true;
+	else return false;
 }
 
 bool String::Equals(const String& other)
@@ -501,19 +432,24 @@ void String::Clear()
 
 int String::IndexOf(char s)
 {
-	for (unsigned int i = 0; i < length; i++)
+	return strstr(this->str, &s) - this->str;
+	/*for (unsigned int i = 0; i < length; i++)
 		if (str[i] == s)
 			return (int)i;
-	return -1;
+	return -1;*/
 }
 
 int String::LastIndexOf(char s)
 {
-	int result = -1;
-	for (unsigned int i = 0; i < length; i++)
+	/*String temp(_strrev(this->str));
+	int result = this->length - 1 - temp.IndexOf(s);
+	_strrev(this->str);
+	return result;*/
+
+	for (unsigned int i = length - 1; i >= 0; i--)
 		if (str[i] == s)
-			result = (int)i;
-	return result;
+			return (int)i;
+	return -1;
 }
 
 int String::IndexOf(const String& other)
@@ -664,7 +600,7 @@ void String::Remove(int Index)
 {
 	if (Index >= 0)
 	{
-		str[(unsigned int)Index] = (char)'/0';
+		str[(unsigned int)Index] = '/0';
 		SetLength((unsigned int)Index);
 	}
 }
