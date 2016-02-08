@@ -1,0 +1,18 @@
+﻿Build started 08.02.2016 19:03:39.
+     1>Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\TemplatePrQueue\TemplatePrQueue.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt List.cpp
+         List.cpp
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(148): warning C4346: 'List<T>::?$Elem@$RT@BAAB@' : dependent name is not a type
+                 prefix with 'typename' to indicate a type
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(148): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(148): error C2065: 'T' : undeclared identifier
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(148): error C2923: 'List' : 'T' is not a valid template type argument for parameter 'T'
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(164): error C2509: 'GetElem' : member function not declared in 'List'
+                 c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.h(8) : see declaration of 'List'
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(164): fatal error C1903: unable to recover from previous error(s); stopping compilation
+     1>Done Building Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\TemplatePrQueue\TemplatePrQueue.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.87
