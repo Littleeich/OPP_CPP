@@ -1,0 +1,20 @@
+﻿Build started 09.02.2016 17:57:18.
+     1>Project "c:\Users\admin\documents\visual studio 2013\Projects\Queue\Queue\Queue.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(9): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\admin\documents\visual studio 2013\Projects\Queue\Debug\Queue.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\admin\documents\visual studio 2013\Projects\Queue\Debug\Queue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\admin\documents\visual studio 2013\Projects\Queue\Debug\Queue.lib" /MACHINE:X86 Debug\List.obj
+         Debug\Source.obj
+     1>Source.obj : error LNK2019: unresolved external symbol "public: __thiscall DList<int>::DList<int>(void)" (??0?$DList@H@@QAE@XZ) referenced in function "public: __thiscall Queue::Queue(int)" (??0Queue@@QAE@H@Z)
+     1>Source.obj : error LNK2019: unresolved external symbol "public: void __thiscall DList<int>::Clear(void)" (?Clear@?$DList@H@@QAEXXZ) referenced in function "public: __thiscall DList<int>::~DList<int>(void)" (??1?$DList@H@@QAE@XZ)
+     1>Source.obj : error LNK2019: unresolved external symbol "public: int & __thiscall DList<int>::operator[](unsigned int)" (??A?$DList@H@@QAEAAHI@Z) referenced in function "public: int __thiscall Queue::Dequeue(void)" (?Dequeue@Queue@@QAEHXZ)
+     1>Source.obj : error LNK2019: unresolved external symbol "public: void __thiscall DList<int>::AddTail(int const &)" (?AddTail@?$DList@H@@QAEXABH@Z) referenced in function "public: void __thiscall Queue::Enqueue(int)" (?Enqueue@Queue@@QAEXH@Z)
+     1>Source.obj : error LNK2019: unresolved external symbol "public: void __thiscall DList<int>::Remove(unsigned int)" (?Remove@?$DList@H@@QAEXI@Z) referenced in function "public: int __thiscall Queue::Dequeue(void)" (?Dequeue@Queue@@QAEHXZ)
+     1>c:\users\admin\documents\visual studio 2013\Projects\Queue\Debug\Queue.exe : fatal error LNK1120: 5 unresolved externals
+     1>Done Building Project "c:\Users\admin\documents\visual studio 2013\Projects\Queue\Queue\Queue.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.63
