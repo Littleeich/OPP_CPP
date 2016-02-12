@@ -1,14 +1,53 @@
-﻿Build started 08.02.2016 16:15:48.
+﻿Build started 12.02.2016 14:35:57.
      1>Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Queue\Queue.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt List.cpp
-         List.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(106): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(69): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(62) : while compiling class template member function 'void Queue<Pair>::Enqueue(T)'
+                 with
+                 [
+                     T=Pair
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(112) : see reference to function template instantiation 'void Queue<Pair>::Enqueue(T)' being compiled
+                 with
+                 [
+                     T=Pair
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(109) : see reference to class template instantiation 'Queue<Pair>' being compiled
+     1>c:\users\admin\documents\visual studio 2013\projects\queue\queue\list.h(95): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\admin\documents\visual studio 2013\projects\queue\queue\list.h(88) : while compiling class template member function 'Pair &DList<T>::operator [](uint)'
+                 with
+                 [
+                     T=Pair
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(83) : see reference to function template instantiation 'Pair &DList<T>::operator [](uint)' being compiled
+                 with
+                 [
+                     T=Pair
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(25) : see reference to class template instantiation 'DList<T>' being compiled
+                 with
+                 [
+                     T=Pair
+                 ]
+     1>c:\users\admin\documents\visual studio 2013\projects\queue\queue\list.h(148): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\admin\documents\visual studio 2013\projects\queue\queue\list.h(141) : while compiling class template member function 'void DList<T>::Remove(uint)'
+                 with
+                 [
+                     T=Pair
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\queue\queue\source.cpp(84) : see reference to function template instantiation 'void DList<T>::Remove(uint)' being compiled
+                 with
+                 [
+                     T=Pair
+                 ]
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Debug\Queue.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Debug\Queue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Debug\Queue.lib" /MACHINE:X86 Debug\List.obj
-         Debug\Source.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Debug\Queue.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Debug\Queue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Debug\Queue.lib" /MACHINE:X86 Debug\Source.obj
          Queue.vcxproj -> C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Debug\Queue.exe
      1>Done Building Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\Queue\Queue\Queue.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.57
+Time Elapsed 00:00:03.71

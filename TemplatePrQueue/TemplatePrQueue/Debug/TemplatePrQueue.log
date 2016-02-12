@@ -1,18 +1,42 @@
-﻿Build started 08.02.2016 19:03:39.
+﻿Build started 12.02.2016 11:43:00.
      1>Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\TemplatePrQueue\TemplatePrQueue.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt List.cpp
-         List.cpp
-     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(148): warning C4346: 'List<T>::?$Elem@$RT@BAAB@' : dependent name is not a type
-                 prefix with 'typename' to indicate a type
-     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(148): error C2143: syntax error : missing ';' before '*'
-     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(148): error C2065: 'T' : undeclared identifier
-     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(148): error C2923: 'List' : 'T' is not a valid template type argument for parameter 'T'
-     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(164): error C2509: 'GetElem' : member function not declared in 'List'
-                 c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.h(8) : see declaration of 'List'
-     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.cpp(164): fatal error C1903: unable to recover from previous error(s); stopping compilation
-     1>Done Building Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\TemplatePrQueue\TemplatePrQueue.vcxproj" (Build target(s)) -- FAILED.
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\source.cpp(77): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.h(95): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.h(88) : while compiling class template member function 'double &DList<T>::operator [](uint)'
+                 with
+                 [
+                     T=double
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\source.cpp(54) : see reference to function template instantiation 'double &DList<T>::operator [](uint)' being compiled
+                 with
+                 [
+                     T=double
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\source.cpp(8) : see reference to class template instantiation 'DList<T>' being compiled
+                 with
+                 [
+                     T=double
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\source.cpp(80) : see reference to class template instantiation 'Queue<double>' being compiled
+     1>c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.h(148): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\list.h(141) : while compiling class template member function 'void DList<T>::Remove(uint)'
+                 with
+                 [
+                     T=double
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\templateprqueue\templateprqueue\source.cpp(55) : see reference to function template instantiation 'void DList<T>::Remove(uint)' being compiled
+                 with
+                 [
+                     T=double
+                 ]
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\Debug\TemplatePrQueue.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\Debug\TemplatePrQueue.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\Debug\TemplatePrQueue.lib" /MACHINE:X86 Debug\Source.obj
+         TemplatePrQueue.vcxproj -> C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\Debug\TemplatePrQueue.exe
+     1>Done Building Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\TemplatePrQueue\TemplatePrQueue\TemplatePrQueue.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.87
+Time Elapsed 00:00:06.69
