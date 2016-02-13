@@ -1,0 +1,42 @@
+﻿Build started 13.02.2016 23:11:44.
+     1>Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\Passport\Passport\Passport.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\list.h(123): error C2512: 'DList<visadata>::DListItem<T>' : no appropriate default constructor available
+                 with
+                 [
+                     T=visadata
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\list.h(122) : while compiling class template member function 'void DList<visadata>::AddTail(const T &)'
+                 with
+                 [
+                     T=visadata
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\visa.h(41) : see reference to function template instantiation 'void DList<visadata>::AddTail(const T &)' being compiled
+                 with
+                 [
+                     T=visadata
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\visa.h(36) : see reference to class template instantiation 'DList<visadata>' being compiled
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\list.h(123): error C2512: 'DList<countrydata>::DListItem<T>' : no appropriate default constructor available
+                 with
+                 [
+                     T=countrydata
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\list.h(122) : while compiling class template member function 'void DList<countrydata>::AddTail(const T &)'
+                 with
+                 [
+                     T=countrydata
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\visits.h(29) : see reference to function template instantiation 'void DList<countrydata>::AddTail(const T &)' being compiled
+                 with
+                 [
+                     T=countrydata
+                 ]
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\visits.h(24) : see reference to class template instantiation 'DList<countrydata>' being compiled
+     1>Done Building Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\Passport\Passport\Passport.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.73
