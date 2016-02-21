@@ -17,6 +17,8 @@ public:
 		this->start = start;
 		this->end = end;
 	}
+
+	countrydata() :countrydata("Ukraine", Date(1, 1, 1970), Date(31, 12, 2999)){}
 };
 
 class Visits

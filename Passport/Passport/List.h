@@ -144,7 +144,7 @@ void DList<T>::Remove(uint index)
 
 	DListItem<T> *delitem = head;
 
-	int i = 0;
+	uint i = 0;
 	while (i < index)
 	{
 		delitem = delitem->next;

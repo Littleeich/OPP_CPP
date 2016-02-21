@@ -1,8 +1,12 @@
 #pragma once
+#include <iostream>
+#include <string>
 #include "List.h"
 #include "Date.h"
 
 using namespace std;
+
+typedef unsigned int uint;
 
 enum class country
 {
@@ -29,6 +33,8 @@ public:
 		this->start = start;
 		this->end = end;
 	}
+
+	visadata() : visadata(country::Ukraine, Date(1, 1, 1970), Date(31, 12, 2999)){}
 };
 
 class Visa
@@ -60,4 +66,3 @@ Visa::Visa(const Visa& other)
 {
 	this->myVisa = other.myVisa;
 }
-
