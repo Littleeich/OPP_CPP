@@ -1,15 +1,29 @@
-﻿Build started 15.02.2016 14:21:42.
-     1>Project "D:\Git\Passport\Passport\Passport.vcxproj" on node 2 (Build target(s)).
+﻿Build started 07.03.2016 20:54:59.
+     1>Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\Passport\Passport\Passport.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Passport.cpp main.cpp
+         Passport.cpp
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\passport.h(93): warning C4114: same type qualifier used more than once
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\passport.h(94): warning C4114: same type qualifier used more than once
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\passport.cpp(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\passport.cpp(96): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\list.h(95): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\list.h(88) : while compiling class template member function 'Journey &DList<Journey>::operator [](uint)'
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\passport.cpp(90) : see reference to function template instantiation 'Journey &DList<Journey>::operator [](uint)' being compiled
+                 c:\users\admin\documents\visual studio 2013\projects\passport\passport\passport.h(54) : see reference to class template instantiation 'DList<Journey>' being compiled
+         Generating Code...
+         Compiling...
          main.cpp
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\passport.h(93): warning C4114: same type qualifier used more than once
+     1>c:\users\admin\documents\visual studio 2013\projects\passport\passport\passport.h(94): warning C4114: same type qualifier used more than once
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Git\Passport\Debug\Passport.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Git\Passport\Debug\Passport.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Git\Passport\Debug\Passport.lib" /MACHINE:X86 Debug\Date.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Passport\Debug\Passport.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Passport\Debug\Passport.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\admin\Documents\Visual Studio 2013\Projects\Passport\Debug\Passport.lib" /MACHINE:X86 Debug\Date.obj
          Debug\main.obj
          Debug\Passport.obj
-         Passport.vcxproj -> D:\Git\Passport\Debug\Passport.exe
-     1>Done Building Project "D:\Git\Passport\Passport\Passport.vcxproj" (Build target(s)).
+         Passport.vcxproj -> C:\Users\admin\Documents\Visual Studio 2013\Projects\Passport\Debug\Passport.exe
+     1>Done Building Project "C:\Users\admin\Documents\Visual Studio 2013\Projects\Passport\Passport\Passport.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:06.25
+Time Elapsed 00:00:06.08

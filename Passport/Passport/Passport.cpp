@@ -74,3 +74,28 @@ Passport::~Passport()
 {
 	cout << "destructor of passport\n";
 }
+
+void FPassport::ShowF()
+{
+	Show();
+	cout << "Forein name: " << fname << endl;
+	cout << "Forein surname: " << fsurname << endl;
+	cout << "Visa information: " << endl << endl;
+	if (myVisa.GetCount() == 0)
+		cout << "No visa\n\n";
+	else
+		for (int i = 0; i < myVisa.GetCount(); i++)
+			cout << myVisa[i].country << "  from " << myVisa[i].start.GetYear() << " " << myVisa[i].start.GetMonth()
+			<< " " << myVisa[i].start.GetDay() << "  to " << myVisa[i].end.GetYear() << " " << myVisa[i].end.GetMonth()
+			<< " " << myVisa[i].end.GetDay() << endl;
+
+	cout << "Visits information: " << endl << endl;
+	if (myVisits.GetCount() == 0)
+		cout << "No visits\n\n";
+	else
+		for (int i = 0; i < myVisits.GetCount(); i++)
+			cout << myVisits[i].country << "  from " << myVisits[i].start.GetYear() << " " << myVisits[i].start.GetMonth()
+			<< " " << myVisits[i].start.GetDay() << "  to " << myVisits[i].end.GetYear() << " " << myVisits[i].end.GetMonth()
+			<< " " << myVisits[i].end.GetDay() << endl;
+	
+}

@@ -1,0 +1,25 @@
+﻿Build started 01.03.2016 0:32:42.
+     1>Project "c:\Users\admin\documents\visual studio 2013\Projects\Marvel\Marvel\Marvel.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\source.cpp(160): warning C4114: same type qualifier used more than once
+     1>c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\source.cpp(161): warning C4114: same type qualifier used more than once
+     1>c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\source.cpp(189): warning C4101: 'ptr' : unreferenced local variable
+     1>c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\temp_dll.h(94): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\temp_dll.h(87) : while compiling class template member function 'Ability &DList<Ability *>::operator [](uint)'
+                 c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\source.cpp(173) : see reference to function template instantiation 'Ability &DList<Ability *>::operator [](uint)' being compiled
+                 c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\source.cpp(89) : see reference to class template instantiation 'DList<Ability *>' being compiled
+     1>c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\temp_dll.h(147): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\temp_dll.h(140) : while compiling class template member function 'void DList<Ability *>::Remove(uint)'
+                 c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\temp_dll.h(65) : see reference to function template instantiation 'void DList<Ability *>::Remove(uint)' being compiled
+                 c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\temp_dll.h(42) : while compiling class template member function 'DList<Ability *>::DList(void)'
+                 c:\users\admin\documents\visual studio 2013\projects\marvel\marvel\source.cpp(92) : see reference to function template instantiation 'DList<Ability *>::DList(void)' being compiled
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\admin\documents\visual studio 2013\Projects\Marvel\Debug\Marvel.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\admin\documents\visual studio 2013\Projects\Marvel\Debug\Marvel.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\admin\documents\visual studio 2013\Projects\Marvel\Debug\Marvel.lib" /MACHINE:X86 Debug\Source.obj
+         Marvel.vcxproj -> c:\users\admin\documents\visual studio 2013\Projects\Marvel\Debug\Marvel.exe
+     1>Done Building Project "c:\Users\admin\documents\visual studio 2013\Projects\Marvel\Marvel\Marvel.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.79

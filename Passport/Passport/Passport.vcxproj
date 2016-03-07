@@ -86,8 +86,6 @@
     <ClInclude Include="Date.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Passport.h" />
-    <ClInclude Include="Visa.h" />
-    <ClInclude Include="Visits.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
