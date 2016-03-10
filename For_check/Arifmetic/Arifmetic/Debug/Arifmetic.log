@@ -1,0 +1,19 @@
+﻿Build started 10.03.2016 23:21:45.
+     1>Project "c:\Users\admin\documents\visual studio 2013\Projects\Arifmetic\Arifmetic\Arifmetic.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Polish.cpp Source.cpp
+         Source.cpp
+         Polish.cpp
+         Generating Code...
+     1>c:\users\admin\documents\visual studio 2013\projects\arifmetic\arifmetic\polish.cpp(250): warning C4715: 'Polish::GetOperatorPriority' : not all control paths return a value
+     1>c:\users\admin\documents\visual studio 2013\projects\arifmetic\arifmetic\stack.h(71): warning C4715: 'Mytemplstack<char>::Push' : not all control paths return a value
+     1>c:\users\admin\documents\visual studio 2013\projects\arifmetic\arifmetic\stack.h(71): warning C4715: 'Mytemplstack<double>::Push' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\admin\documents\visual studio 2013\Projects\Arifmetic\Debug\Arifmetic.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\admin\documents\visual studio 2013\Projects\Arifmetic\Debug\Arifmetic.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\admin\documents\visual studio 2013\Projects\Arifmetic\Debug\Arifmetic.lib" /MACHINE:X86 Debug\Polish.obj
+         Debug\Source.obj
+         Arifmetic.vcxproj -> c:\users\admin\documents\visual studio 2013\Projects\Arifmetic\Debug\Arifmetic.exe
+     1>Done Building Project "c:\Users\admin\documents\visual studio 2013\Projects\Arifmetic\Arifmetic\Arifmetic.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.96
