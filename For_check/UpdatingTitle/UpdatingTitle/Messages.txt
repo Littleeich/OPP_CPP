@@ -1,0 +1,88 @@
+Message: WM_KEYDOWN, Key code: 16, Repeat: 1
+Message: WM_KEYDOWN, Key code: 16, Repeat: 1
+Message: WM_KEYDOWN, Key code: 16, Repeat: 2
+Message: WM_KEYDOWN, Key code: 71, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 71, Repeat: 1
+Message: WM_KEYUP, Key code: 16, Repeat: 1
+Message: WM_KEYDOWN, Key code: 72, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 72, Repeat: 1
+Message: WM_KEYDOWN, Key code: 74, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 74, Repeat: 1
+Message: WM_KEYDOWN, Key code: 68, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 68, Repeat: 1
+Message: WM_KEYDOWN, Key code: 84, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 84, Repeat: 1
+Message: WM_KEYDOWN, Key code: 72, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 72, Repeat: 1
+Message: WM_KEYDOWN, Key code: 82, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 82, Repeat: 1
+Message: WM_KEYDOWN, Key code: 70, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 70, Repeat: 1
+Message: WM_KEYDOWN, Key code: 32, Repeat: 1
+Message: WM_CHAR, Key:  , Key code: 32, Repeat: 1
+Message: WM_KEYUP, Key code: 32, Repeat: 1
+Message: WM_KEYDOWN, Key code: 89, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 89, Repeat: 1
+Message: WM_KEYDOWN, Key code: 84, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 84, Repeat: 1
+Message: WM_KEYDOWN, Key code: 67, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 67, Repeat: 1
+Message: WM_KEYDOWN, Key code: 82, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 82, Repeat: 1
+Message: WM_KEYDOWN, Key code: 74, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 74, Repeat: 1
+Message: WM_KEYDOWN, Key code: 75, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 75, Repeat: 1
+Message: WM_KEYDOWN, Key code: 77, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 77, Repeat: 1
+Message: WM_KEYDOWN, Key code: 82, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 82, Repeat: 1
+Message: WM_KEYDOWN, Key code: 66, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 66, Repeat: 1
+Message: WM_KEYDOWN, Key code: 219, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 219, Repeat: 1
+Message: WM_KEYDOWN, Key code: 32, Repeat: 1
+Message: WM_CHAR, Key:  , Key code: 32, Repeat: 1
+Message: WM_KEYUP, Key code: 32, Repeat: 1
+Message: WM_KEYDOWN, Key code: 89, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 89, Repeat: 1
+Message: WM_KEYDOWN, Key code: 70, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 70, Repeat: 1
+Message: WM_KEYDOWN, Key code: 76, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 76, Repeat: 1
+Message: WM_KEYDOWN, Key code: 71, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 71, Repeat: 1
+Message: WM_KEYDOWN, Key code: 66, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 66, Repeat: 1
+Message: WM_KEYDOWN, Key code: 67, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 67, Repeat: 1
+Message: WM_KEYDOWN, Key code: 84, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 84, Repeat: 1
+Message: WM_KEYDOWN, Key code: 81, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 81, Repeat: 1
+Message: WM_KEYDOWN, Key code: 13, Repeat: 1
+Message: WM_CHAR, Key: , Key code: 13, Repeat: 1
+Message: WM_KEYUP, Key code: 13, Repeat: 1
+Message: WM_KEYDOWN, Key code: 74, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 74, Repeat: 1
+Message: WM_KEYDOWN, Key code: 71, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 71, Repeat: 1
+Message: WM_KEYDOWN, Key code: 72, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 72, Repeat: 1
+Message: WM_KEYDOWN, Key code: 70, Repeat: 1
+Message: WM_CHAR, Key: Message: WM_KEYUP, Key code: 70, Repeat: 1
+Message: WM_KEYDOWN, Key code: 13, Repeat: 1
+Message: WM_CHAR, Key: , Key code: 13, Repeat: 1
+Message: WM_KEYUP, Key code: 13, Repeat: 1
+Message: WM_KEYDOWN, Key code: 8, Repeat: 1
+Message: WM_CHAR, Key: , Key code: 8, Repeat: 1
+Message: WM_KEYUP, Key code: 8, Repeat: 1
+Message: WM_KEYDOWN, Key code: 8, Repeat: 1
+Message: WM_CHAR, Key: , Key code: 8, Repeat: 1
+Message: WM_KEYUP, Key code: 8, Repeat: 1
+Message: WM_KEYDOWN, Key code: 8, Repeat: 1
+Message: WM_CHAR, Key: , Key code: 8, Repeat: 1
+Message: WM_KEYUP, Key code: 8, Repeat: 1
+Message: WM_KEYDOWN, Key code: 27, Repeat: 1
+Message: WM_CHAR, Key: , Key code: 27, Repeat: 1
+Message: WM_KEYUP, Key code: 27, Repeat: 1
