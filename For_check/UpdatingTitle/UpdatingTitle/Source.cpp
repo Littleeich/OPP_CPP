@@ -6,7 +6,7 @@ VOID AddKeyboardMessageInfo(TCHAR chKey, WORD wRepeat);
 VOID AddKeyboardKeyMessageInfo(LPCTSTR pcszMessage, UINT nKeyCode, WORD wRepeat);
 LRESULT CALLBACK WindowProcedure(HWND, UINT, WPARAM, LPARAM);
 
-char title[80];
+TCHAR title[80];
 int pos = 6;
 
 INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR szCmdLine, INT nCmdShow)
@@ -29,11 +29,11 @@ INT WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR szCmdL
 
 	INT nExitCode = 0;
 	
-	wsprintf((LPWSTR)title, TEXT("Title1"));
+	wsprintf(/*(LPWSTR)*/title, TEXT("Title1"));
 
 	if (RegisterClassEx(&wc))
 	{
-		HWND hWindow = CreateWindowEx(0, szClassWindow, (LPWSTR) title,
+		HWND hWindow = CreateWindowEx(0, szClassWindow, /*(LPWSTR)*/ title,
 			WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, NULL,
 			NULL, hInstance, NULL);
 
