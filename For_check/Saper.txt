@@ -1,0 +1,83 @@
+// удалить с диалога всё
+
+#include <windows.h>
+#include "resource.h"
+
+#pragma comment(linker, "\"/manifestdependency:type='win32' \
+name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' \
+publicKeyToken='6595b64144ccf1df' language='*'\"")
+
+BOOL CALLBACK DlgProc(HWND, UINT, WPARAM, LPARAM);
+const UINT M = 5;
+const UINT N = 4;
+const UINT bombs = 3;
+UINT bcoord[bombs];
+HWND  hButton[N][M];
+HINSTANCE hInst;
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpszCmdLine, int nCmdShow)
+{
+	hInst = hInstance;
+	return DialogBox(hInstance, MAKEINTRESOURCE(IDD_DIALOG1), NULL, DlgProc);
+}
+
+BOOL CALLBACK DlgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+	case WM_CLOSE:
+		EndDialog(hWnd, 0);
+		return TRUE;
+
+	case WM_INITDIALOG:
+		for (int j = 0; j < N; j++)
+			for (int i = 0; i < M; i++)
+			{
+				TCHAR * TEMP = new TCHAR;
+				wsprintf(TEMP, TEXT("%d"), (M * j + i + 1));
+				hButton[j][i] = CreateWindowEx(WS_EX_CLIENTEDGE | WS_EX_DLGMODALFRAME, TEXT("BUTTON"), TEMP, WS_CHILD | WS_VISIBLE | WS_TABSTOP, 10 + i * 85, 10 + j * 85, 80, 80, hWnd, 0, hInst, 0);
+			}
+		for (int t = 0; t < bombs; t++)
+		{
+			if (t == 0)
+				bcoord[0] = rand() % (M * N) + 1;
+			else
+			{
+				bcoord[t] = rand() % (M * N) + 1;
+				do
+				{
+					for (int t2 = 0; t2 < t; t2++)
+					{
+						if (bcoord[t] == bcoord[t2])
+							bcoord[t] == M * N + 1;
+					}
+				} while (bcoord[t] == M * N + 1);
+			}
+		}
+		return TRUE;
+
+	case WM_COMMAND:
+	{
+		HWND h = (HWND)lParam;
+		for (int j = 0; j < N; j++)
+			for (int i = 0; i < M; i++)
+				if (h == hButton[j][i])
+				{
+					ShowWindow(hButton[j][i], SW_HIDE);
+					TCHAR * TEMP = new TCHAR;
+					wsprintf(TEMP, TEXT("Line: %d, Colomn: %d"), j + 1, i + 1);
+					SetWindowText(hWnd, TEMP);
+
+					for (int p = 0; p < bombs; p++)
+						if (bcoord[p] == M * j + i + 1)
+						{
+							MessageBox(0, L"Вы попали на бомбу!", L"FAIL", MB_OK | MB_ICONEXCLAMATION);
+							EndDialog(hWnd, 0);
+							return TRUE;
+						}
+				}
+	}
+	return TRUE;
+	}
+	return FALSE;
+}
